@@ -60,18 +60,19 @@
 				</span>
 				<span class="badge badge--accent" style="margin-left:0.6rem">Original post</span>
 			</div>
-			{#if data.user?.id === data.thread.author_id}
+			{#if data.user?.id === data.thread.author_id || data.profile?.is_admin}
 				<div class="post__actions">
-					<a class="btn btn--sm" href="{base}/forum/edit/{data.thread.id}">Edit</a>
-					<form action="?/deleteThread" method="post">
-						<input type="hidden" name="thread_id" value={data.thread.id} />
-						<button
-							class="btn btn--sm btn--danger"
-							type="submit"
-							onsubmit={(e) => {
-								if (!confirm('Delete this thread and all its replies?')) e.preventDefault();
-							}}
-						>
+					{#if data.user?.id === data.thread.author_id}
+						<a class="btn btn--sm" href="{base}/forum/edit/{data.thread.id}">Edit</a>
+					{/if}
+					<form
+						action="?/deleteThread"
+						method="post"
+						onsubmit={(event) => {
+							if (!confirm('Delete this thread and all its replies?')) event.preventDefault();
+						}}
+					>
+						<button class="btn btn--sm btn--danger" type="submit">
 							Delete
 						</button>
 					</form>
@@ -96,26 +97,28 @@
 						<RelativeTime datetime={post.created_at} />
 					</span>
 				</div>
-				{#if data.user?.id === post.author_id}
+				{#if data.user?.id === post.author_id || data.profile?.is_admin}
 					<div class="post__actions">
-						<button
-							class="btn btn--sm"
-							type="button"
-							onclick={() => toggleEdit(post.id)}
-						>
-							Edit
-						</button>
-						<form action="?/deletePost" method="post">
-							<input type="hidden" name="post_id" value={post.id} />
-						<button
-							class="btn btn--sm btn--danger"
-							type="submit"
-							onsubmit={(e) => {
-								if (!confirm('Delete this reply?')) e.preventDefault();
+						{#if data.user?.id === post.author_id}
+							<button
+								class="btn btn--sm"
+								type="button"
+								onclick={() => toggleEdit(post.id)}
+							>
+								Edit
+							</button>
+						{/if}
+						<form
+							action="?/deletePost"
+							method="post"
+							onsubmit={(event) => {
+								if (!confirm('Delete this reply?')) event.preventDefault();
 							}}
 						>
-							Delete
-						</button>
+							<input type="hidden" name="post_id" value={post.id} />
+							<button class="btn btn--sm btn--danger" type="submit">
+								Delete
+							</button>
 						</form>
 					</div>
 				{/if}

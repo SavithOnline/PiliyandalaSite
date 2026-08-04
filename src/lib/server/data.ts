@@ -58,6 +58,11 @@ function mapPostAuthor(rows: any[]): PostWithAuthor[] {
 	}));
 }
 
+function aggregateCount(value: { count?: number } | { count?: number }[] | null): number {
+	const count = Array.isArray(value) ? value[0]?.count : value?.count;
+	return Number(count ?? 0);
+}
+
 export function getCategories(db: DB): Promise<CategoryRow[]> {
 	return safe(
 		async () => {
@@ -160,7 +165,7 @@ export function getThreadDetail(db: DB, threadId: string) {
 				...row,
 				author: row.author ?? null,
 				category: row.category ?? null,
-				post_count: (row.post_count as { count: number } | null)?.count ?? 0
+				post_count: aggregateCount(row.post_count)
 			} as ThreadDetail;
 		},
 		null

@@ -1,13 +1,15 @@
 import { redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { base } from '$app/paths';
+import { safeNextPath } from '$lib/server/auth';
 
-export const load: PageServerLoad = async ({ locals, url }) => {
+const AUTH_NEXT_COOKIE = 'piliyandala-auth-next';
+const AUTH_CALLBACK_PATH = `${base}/auth/callback`;
+
+export const load: PageServerLoad = async ({ cookies, locals, url }) => {
 	const code = url.searchParams.get('code');
-	const nextParam = url.searchParams.get('next');
-
-	// Only allow internal relative redirects to avoid open-redirect abuse.
-	const next = nextParam?.startsWith('/') && !nextParam.startsWith('//') ? nextParam : `${base}/forum`;
+	const next = safeNextPath(cookies.get(AUTH_NEXT_COOKIE));
+	cookies.delete(AUTH_NEXT_COOKIE, { path: AUTH_CALLBACK_PATH });
 
 	if (code) {
 		const { error } = await locals.supabase.auth.exchangeCodeForSession(code);

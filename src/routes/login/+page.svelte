@@ -38,7 +38,7 @@
 			{/if}
 
 			<form method="post" action="?/signin">
-				<input type="hidden" name="next" value={data.next} />
+				<input type="hidden" name="next" value={form?.next ?? data.next} />
 				<div class="field">
 					<label for="email">Email address</label>
 					<input

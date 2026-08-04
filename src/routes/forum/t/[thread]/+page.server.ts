@@ -67,6 +67,7 @@ export const actions: Actions = {
 			.from('posts')
 			.select('id, author_id')
 			.eq('id', postId)
+			.eq('thread_id', params.thread)
 			.maybeSingle();
 		if (fetchErr || !existing) return fail(404, { error: 'Post not found.' });
 		if (existing.author_id !== user.id) return fail(403, { error: 'Not your post.' });
@@ -74,7 +75,8 @@ export const actions: Actions = {
 		const { error: err } = await locals.supabase
 			.from('posts')
 			.update({ body, edited_at: new Date().toISOString() })
-			.eq('id', postId);
+			.eq('id', postId)
+			.eq('thread_id', params.thread);
 		if (err) return fail(500, { error: 'Could not save your edit. Please try again.' });
 
 		redirect(303, `${base}/forum/t/${params.thread}#p-${postId}`);
@@ -91,6 +93,7 @@ export const actions: Actions = {
 			.from('posts')
 			.select('id, author_id')
 			.eq('id', postId)
+			.eq('thread_id', params.thread)
 			.maybeSingle();
 		if (fetchErr || !existing) return fail(404, { error: 'Post not found.' });
 
@@ -105,18 +108,21 @@ export const actions: Actions = {
 			return fail(403, { error: 'Not your post.' });
 		}
 
-		const { error: err } = await locals.supabase.from('posts').delete().eq('id', postId);
+		const { error: err } = await locals.supabase
+			.from('posts')
+			.delete()
+			.eq('id', postId)
+			.eq('thread_id', params.thread);
 		if (err) return fail(500, { error: 'Could not delete the post. Please try again.' });
 
 		redirect(303, `${base}/forum/t/${params.thread}`);
 	},
 
-	deleteThread: async ({ locals, request }) => {
+	deleteThread: async ({ locals, params }) => {
 		const { user } = await locals.safeGetSession();
 		if (!user) return fail(401, { error: 'You must be logged in.' });
 
-		const form = await request.formData();
-		const threadId = String(form.get('thread_id') ?? '');
+		const threadId = params.thread;
 
 		const { data: existing, error: fetchErr } = await locals.supabase
 			.from('threads')
