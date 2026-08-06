@@ -10,6 +10,11 @@ export default defineConfig({
 				runes: ({ filename }) => filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
 			adapter: adapter(),
+			csrf: {
+				// savith.online is the public origin. Its portfolio deployment proxies
+				// /Piliyandala to this Vercel project, whose internal origin differs.
+				trustedOrigins: ['https://savith.online']
+			},
 			paths: {
 				base: '/Piliyandala',
 				relative: false

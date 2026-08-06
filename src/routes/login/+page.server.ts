@@ -5,6 +5,7 @@ import { safeNextPath } from '$lib/server/auth';
 
 const AUTH_NEXT_COOKIE = 'piliyandala-auth-next';
 const AUTH_CALLBACK_PATH = `${base}/auth/callback`;
+const PUBLIC_SITE_ORIGIN = 'https://savith.online';
 
 export const load: PageServerLoad = async ({ locals, url }) => {
 	const { user } = await locals.safeGetSession();
@@ -30,7 +31,8 @@ export const actions: Actions = {
 		// The magic-link callback must use the public-facing origin — when
 		// accessed through savith.online this is savith.online, otherwise the
 		// direct deployment origin.
-		const origin = url.origin;
+		const requestOrigin = request.headers.get('origin');
+		const origin = requestOrigin === PUBLIC_SITE_ORIGIN ? PUBLIC_SITE_ORIGIN : url.origin;
 		const emailRedirectTo = `${origin}${AUTH_CALLBACK_PATH}`;
 
 		// PKCE magic links must be completed in the same browser, so a short-lived,

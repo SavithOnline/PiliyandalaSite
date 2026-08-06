@@ -22,9 +22,6 @@
 		return page.url.pathname.startsWith(href);
 	}
 
-	const initials = $derived(
-		(profile?.display_name ?? user?.email ?? '?').trim().slice(0, 2).toUpperCase()
-	);
 </script>
 
 <header class="site-header">
@@ -45,13 +42,14 @@
 			{/each}
 			<span aria-hidden="true" style="width:0.6rem"></span>
 			{#if user}
-				<a class="site-nav__link nav-cta" href="{base}/forum/profile/{user.id}">
+				<a
+					class="site-nav__link nav-cta account-link"
+					href="{base}/account"
+					aria-label="Open your account"
+				>
 					<Avatar user={profile} size="sm" />
-					<span style="margin-left:0.4rem">{profile?.display_name ?? 'My profile'}</span>
+					<span>Account</span>
 				</a>
-				<form action="{base}/logout?/signout" method="post">
-					<button class="btn btn--sm" type="submit">Log out</button>
-				</form>
 			{:else}
 				<a class="btn btn--sm btn--primary nav-cta" href="{base}/login">Log in</a>
 			{/if}
@@ -73,12 +71,7 @@
 			<a href={item.href} onclick={() => (menuOpen = false)}>{item.label}</a>
 		{/each}
 		{#if user}
-			<a href="{base}/forum/profile/{user.id}" onclick={() => (menuOpen = false)}>
-				My profile
-			</a>
-			<form action="{base}/logout?/signout" method="post">
-				<button class="btn" type="submit" style="margin-top:0.6rem;width:100%">Log out</button>
-			</form>
+			<a href="{base}/account" onclick={() => (menuOpen = false)}>Account</a>
 		{:else}
 			<a href="{base}/login" onclick={() => (menuOpen = false)}>Log in</a>
 		{/if}
