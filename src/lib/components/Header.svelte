@@ -14,7 +14,6 @@
 		{ href: `${base}/landmarks`, label: 'Landmarks' },
 		{ href: `${base}/geography`, label: 'Geography' },
 		{ href: `${base}/transport`, label: 'Transport' },
-		{ href: `${base}/community`, label: 'Community' },
 		{ href: `${base}/forum`, label: 'Forum' }
 	]);
 
@@ -33,7 +32,6 @@
 	<div class="wrap site-header__bar">
 		<a class="wordmark" href="{base}/">
 			පිළියන්දල
-			<small>Piliyandala · Western Province</small>
 		</a>
 
 		<div class="site-nav">

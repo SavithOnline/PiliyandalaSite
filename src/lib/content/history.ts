@@ -20,8 +20,7 @@ export const history: ContentPage = {
 						'Over time, the name evolved into <strong>Piliyandala</strong>.',
 						'The stream still flows through the area today, although it has shrunk to a small creek.'
 					]
-				},
-				{ type: 'note', text: 'Alternative names in some references include “Piliyandara.”' }
+				}
 			]
 		},
 		{

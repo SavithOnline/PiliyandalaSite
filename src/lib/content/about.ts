@@ -7,6 +7,44 @@ export const about: ContentPage = {
 		'Piliyandala is a major suburban town in the Colombo District of the Western Province, Sri Lanka — roughly 18 km (11 miles) south of Colombo and part of the greater Colombo metropolitan area.',
 	sections: [
 		{
+			heading: 'Piliyandala in numbers',
+			lede: 'A visual snapshot of the town and the wider Kesbewa Divisional Secretariat Division.',
+			blocks: [
+				{
+					type: 'metricGrid',
+					items: [
+						{ label: 'Kesbewa DS population', value: '245,232', detail: '2012 census' },
+						{ label: 'Population density', value: '3,832', detail: 'people per km²' },
+						{ label: 'Kesbewa DS area', value: '64 km²' },
+						{ label: 'From Colombo', value: '~18 km', detail: 'south by road' }
+					]
+				},
+				{
+					type: 'barCharts',
+					charts: [
+						{
+							title: 'Annual population growth',
+							caption: 'Rates are from different census periods and provide broad context.',
+							max: 1.5,
+							items: [
+								{ label: 'Kesbewa DS · 2001–2012', value: 1.5, display: '1.5%' },
+								{ label: 'Sri Lanka · 2012–2024', value: 0.52, display: '0.52%' }
+							]
+						},
+						{
+							title: 'Colombo District land value index',
+							caption: 'Index growth from the 2017 baseline to mid-2025.',
+							max: 256.4,
+							items: [
+								{ label: '2017 baseline', value: 100, display: '100' },
+								{ label: 'Mid-2025', value: 256.4, display: '256.4' }
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			heading: 'Quick facts',
 			blocks: [
 				{

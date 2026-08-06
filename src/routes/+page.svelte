@@ -42,14 +42,8 @@
 			desc: 'The Divisional Hospital and primary care, free under the national health policy.'
 		},
 		{
-			href: '/community',
-			index: '07',
-			title: 'Community',
-			desc: 'Notable people, the first SOS Children’s Village, sport and recreation.'
-		},
-		{
 			href: '/development',
-			index: '08',
+			index: '07',
 			title: 'Development',
 			desc: 'Sukitha Purawara, road rehabilitation and the plans to become a major transport hub.'
 		}
@@ -57,10 +51,10 @@
 </script>
 
 <svelte:head>
-	<title>Piliyandala — A Community Guide &amp; Forum</title>
+	<title>Piliyandala — A Local Guide &amp; Forum</title>
 	<meta
 		name="description"
-		content="Piliyandala, a town in the Colombo District of Sri Lanka — history, landmarks, transport and a community forum."
+		content="Piliyandala, a town in the Colombo District of Sri Lanka — history, landmarks, transport and a local forum."
 	/>
 </svelte:head>
 
@@ -68,14 +62,14 @@
 	<div class="wrap">
 		<span class="hero__sinhala">පිළියන්දල</span>
 		<span class="hero__english">Piliyandala</span>
-		<span class="hero__tamil">பிலியந்தலை — Colombo District · Western Province · Sri Lanka</span>
+		<span class="hero__tamil">பிலியந்தலை</span>
 		<p class="hero__lede">
 			A major suburban town about 18 km south of Colombo — home to one of the island’s
-			tallest clock towers, a vibrant central market and Sri Lanka’s first SOS Children’s
-			Village. This is a community guide and forum for the town.
+			tallest clock towers and a vibrant central market. This is a local guide and forum
+			for the town.
 		</p>
 		<div class="hero__actions">
-			<a class="btn btn--primary" href="{base}/history">Explore the town</a>
+			<a class="btn btn--primary" href="{base}/about">Explore the town</a>
 			<a class="btn" href="{base}/forum">Join the forum</a>
 		</div>
 	</div>
@@ -97,10 +91,6 @@
 	<div class="quickfacts__item">
 		<span class="quickfacts__value">10300</span>
 		<span class="quickfacts__label">Postal code</span>
-	</div>
-	<div class="quickfacts__item">
-		<span class="quickfacts__value">1887</span>
-		<span class="quickfacts__label">Central College founded</span>
 	</div>
 	<div class="quickfacts__item">
 		<span class="quickfacts__value">2,039 mm</span>

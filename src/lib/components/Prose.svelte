@@ -52,17 +52,52 @@
 			</table>
 		</div>
 		{#if block.caption}<p class="table-caption">{block.caption}</p>{/if}
+	{:else if block.type === 'metricGrid'}
+		<dl class="snapshot-grid">
+			{#each block.items as item (item.label)}
+				<div class="snapshot-grid__item">
+					<dt>{item.label}</dt>
+					<dd>{item.value}</dd>
+					{#if item.detail}<span>{item.detail}</span>{/if}
+				</div>
+			{/each}
+		</dl>
+	{:else if block.type === 'barCharts'}
+		<div class="chart-grid">
+			{#each block.charts as chart (chart.title)}
+				<figure class="bar-chart">
+					<figcaption>
+						<strong>{chart.title}</strong>
+						<span>{chart.caption}</span>
+					</figcaption>
+					<div class="bar-chart__plot">
+						{#each chart.items as item (item.label)}
+							<div class="bar-chart__row">
+								<div class="bar-chart__label">
+									<span>{item.label}</span>
+									<strong>{item.display}</strong>
+								</div>
+								<div class="bar-chart__track" aria-hidden="true">
+									<span style={`--bar-size: ${Math.max(0, Math.min(100, (item.value / chart.max) * 100))}%`}></span>
+								</div>
+							</div>
+						{/each}
+					</div>
+				</figure>
+			{/each}
+		</div>
 	{:else if block.type === 'timeline'}
-		<div class="timeline">
+		<ol class="timeline">
 			{#each block.items as item, n (n)}
-				<div class="timeline__item">
+				<li class="timeline__item">
 					<div class="timeline__year">{item.year}</div>
+					<span class="timeline__marker" aria-hidden="true"></span>
 					<div class="timeline__body">
 						{#if item.title}<h3>{item.title}</h3>{/if}
 						<p>{@html item.text}</p>
 					</div>
-				</div>
+				</li>
 			{/each}
-		</div>
+		</ol>
 	{/if}
 {/each}

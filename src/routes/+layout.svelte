@@ -8,10 +8,10 @@
 </script>
 
 <svelte:head>
-	<title>Piliyandala — A Community Guide &amp; Forum</title>
+	<title>Piliyandala — A Local Guide &amp; Forum</title>
 	<meta
 		name="description"
-		content="Piliyandala, a town in the Colombo District of Sri Lanka — history, landmarks, transport and a community forum."
+		content="Piliyandala, a town in the Colombo District of Sri Lanka — history, landmarks, transport and a local forum."
 	/>
 	<meta name="theme-color" content="#175c40" />
 	<link rel="icon" href="{base}/favicon.svg" type="image/svg+xml" />

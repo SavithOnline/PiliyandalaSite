@@ -120,32 +120,8 @@ export const landmarks: ContentPage = {
 				{
 					type: 'ul',
 					items: [
-						'<strong>St. Luke’s Church, Piliyandala</strong> — the town’s principal Anglican church, located in the town centre.',
-						'<strong>Our Lady of Lourdes Church</strong> (Dampe).'
+						'<strong>St. Luke’s Church, Piliyandala</strong> — the town’s principal Anglican church, located in the town centre.'
 					]
-				},
-				{
-					type: 'p',
-					text: 'Minor Hindu kovils and mosques cater to the Tamil and Moor communities, reflecting the area’s (small) religious diversity.'
-				}
-			]
-		},
-		{
-			heading: 'Attractions & leisure nearby',
-			blocks: [
-				{
-					type: 'ul',
-					items: [
-						'<strong>Bolgoda Lake</strong> (5–7 km southwest): Sri Lanka’s largest natural freshwater lake — a major recreation destination with boating, kayaking, jet-skiing, fishing, birdwatching and lake-view resorts (e.g. The Island on Bolgoda, Habala Lake View). The lake’s northern stretch reaches from Anguruwatota toward Piliyandala.',
-						'<strong>Cactus Piliyandala</strong> — a scenic spot/restaurant destination popular with visitors.',
-						'<strong>Mt. Lavinia Beach</strong> — a 15–30 minute drive away.',
-						'<strong>University of Moratuwa</strong> — only ~3.5 km from Piliyandala (Sri Lanka’s premier engineering university).',
-						'Nearby attractions include Bellanwila Rajamaha Viharaya, the National Zoological Gardens (Dehiwala Zoo) and Weras Ganga Park.'
-					]
-				},
-				{
-					type: 'p',
-					text: 'Cricket is the dominant local passion, anchored by Piliyandala Central College. Vesak and Poson festivals are celebrated with pandols, lanterns and processions; the town hosts interfaith community events.'
 				}
 			]
 		}

@@ -119,8 +119,7 @@ export const education: ContentPage = {
 				{
 					type: 'ul',
 					items: [
-						'<strong>University of Moratuwa</strong> — approximately 3.5 km away.',
-						'<strong>Hermann Gmeiner School</strong> (SOS Children’s Village) — model school serving grades 1–13, capacity ~850 students.'
+						'<strong>University of Moratuwa</strong> — approximately 3.5 km away.'
 					]
 				}
 			]

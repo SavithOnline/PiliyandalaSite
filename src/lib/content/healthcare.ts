@@ -55,19 +55,6 @@ export const healthcare: ContentPage = {
 					]
 				}
 			]
-		},
-		{
-			heading: 'Public health priorities',
-			blocks: [
-				{
-					type: 'ul',
-					items: [
-						'<strong>Dengue prevention:</strong> the Piliyandala MOH area has been flagged as high-risk (2023), prompting intensified vector-control campaigns, fogging and community clean-ups.',
-						'<strong>Nutrition:</strong> child welfare clinics address malnutrition through growth assessment and complementary-feeding education (supported by published research in the Piliyandala MOH area).',
-						'<strong>Community empowerment:</strong> resident-led health promotion in divisions like Kaliyammahara.'
-					]
-				}
-			]
 		}
 	]
 };

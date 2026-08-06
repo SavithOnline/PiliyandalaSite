@@ -6,6 +6,19 @@ export type ContentBlock =
 	| { type: 'quote'; text: string; cite?: string }
 	| { type: 'note'; text: string }
 	| { type: 'table'; head?: string[]; rows: string[][]; caption?: string }
+	| {
+			type: 'metricGrid';
+			items: { label: string; value: string; detail?: string }[];
+	  }
+	| {
+			type: 'barCharts';
+			charts: {
+				title: string;
+				caption: string;
+				max: number;
+				items: { label: string; value: number; display: string }[];
+			}[];
+	  }
 	| { type: 'timeline'; items: { year: string; title?: string; text: string }[] };
 
 export interface ContentSection {
