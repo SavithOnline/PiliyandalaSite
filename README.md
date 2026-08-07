@@ -57,9 +57,20 @@ hosted). Values needed:
 ### Auth
 
 Magic-link sign-in is used. In the Supabase dashboard, add the redirect URL
-`http://localhost:5173/Piliyandala/login` to
+`http://localhost:5173/Piliyandala/auth/callback` to
 Authentication → URL Configuration → Redirect URLs (and the production URL,
-e.g. `https://savith.online/Piliyandala/login`).
+e.g. `https://savith.online/Piliyandala/auth/callback`).
+
+To allow a user to request the email in one browser and open it in another,
+set Authentication > Email Templates > Magic Link to use this link (the
+repository's `supabase/templates/magic_link.html` contains the full template):
+
+```html
+<a href="{{ .RedirectTo }}&amp;token_hash={{ .TokenHash }}&amp;type=email">Log in to the forum</a>
+```
+
+The callback still accepts older PKCE links, but those links must be opened in
+the same browser that requested them.
 
 ## Checks and build
 

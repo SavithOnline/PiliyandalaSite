@@ -33,10 +33,13 @@ export const actions: Actions = {
 		// direct deployment origin.
 		const requestOrigin = request.headers.get('origin');
 		const origin = requestOrigin === PUBLIC_SITE_ORIGIN ? PUBLIC_SITE_ORIGIN : url.origin;
-		const emailRedirectTo = `${origin}${AUTH_CALLBACK_PATH}`;
+		// Keep the destination in the URL as well as the cookie. The URL survives
+		// when a magic link is opened in a different browser or on another device.
+		const callbackUrl = new URL(`${origin}${AUTH_CALLBACK_PATH}`);
+		callbackUrl.searchParams.set('next', next);
+		const emailRedirectTo = callbackUrl.toString();
 
-		// PKCE magic links must be completed in the same browser, so a short-lived,
-		// HTTP-only cookie is also the safest place to preserve the destination.
+		// This remains the safest fallback for the normal same-browser PKCE flow.
 		cookies.set(AUTH_NEXT_COOKIE, next, {
 			httpOnly: true,
 			maxAge: 10 * 60,

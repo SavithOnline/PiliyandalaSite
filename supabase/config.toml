@@ -248,6 +248,13 @@ otp_expiry = 3600
 # subject = "You have been invited"
 # content_path = "./supabase/templates/invite.html"
 
+# Use a token-hash link for magic-link sign-in. Unlike PKCE's authorization
+# code, this one-time token can be verified when the email opens in a different
+# mobile browser from the one that requested it.
+[auth.email.template.magic_link]
+subject = "Log in to the Piliyandala Forum"
+content_path = "./supabase/templates/magic_link.html"
+
 # Uncomment to customize notification email template
 # [auth.email.notification.password_changed]
 # enabled = true

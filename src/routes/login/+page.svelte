@@ -19,7 +19,10 @@
 				<span class="sent-state__email">{form.email}</span>. Click the link in the email to
 				finish logging in — it will bring you straight back here.
 			</p>
-			<p class="form-note">No email yet? Check your spam folder, then try again.</p>
+			<p class="form-note">
+				You can open the link in your usual browser, even if it is different from this one.
+				No email yet? Check your spam folder, then try again.
+			</p>
 		</div>
 	{:else}
 		<div class="auth-card">
