@@ -61,16 +61,10 @@ Magic-link sign-in is used. In the Supabase dashboard, add the redirect URL
 Authentication → URL Configuration → Redirect URLs (and the production URL,
 e.g. `https://savith.online/Piliyandala/auth/callback`).
 
-To allow a user to request the email in one browser and open it in another,
-set Authentication > Email Templates > Magic Link to use this link (the
-repository's `supabase/templates/magic_link.html` contains the full template):
-
-```html
-<a href="{{ .RedirectTo }}&amp;token_hash={{ .TokenHash }}&amp;type=email">Log in to the forum</a>
-```
-
-The callback still accepts older PKCE links, but those links must be opened in
-the same browser that requested them.
+Magic links use Supabase's implicit browser flow so a user can request the
+email in one mobile browser and open it in another. The callback stores the
+session in SSR cookies. It also accepts older PKCE links, though those older
+links must be opened in the browser that requested them.
 
 ## Checks and build
 

@@ -23,6 +23,7 @@ export const load: PageServerLoad = async ({ cookies, locals, url }) => {
 			redirect(303, next);
 		}
 		console.error('[auth] verifyOtp failed:', error);
+		redirect(303, `${base}/login?error=${encodeURIComponent('The sign-in link was invalid or has expired. Please request a new one.')}`);
 	}
 
 	// Continue accepting existing PKCE links. These must be opened in the same
@@ -33,10 +34,13 @@ export const load: PageServerLoad = async ({ cookies, locals, url }) => {
 			redirect(303, next);
 		}
 		console.error('[auth] exchangeCodeForSession failed:', error);
+		redirect(
+			303,
+			`${base}/login?error=${encodeURIComponent('This older sign-in link must be opened in the same browser that requested it, or it may have expired. Please request a new link.')}`
+		);
 	}
 
-	const message = code
-		? 'This sign-in link was opened in a different browser, or it has expired. Please request a new link and open it in the same browser.'
-		: 'The sign-in link was invalid or has expired. Please request a new one.';
-	redirect(303, `${base}/login?error=${encodeURIComponent(message)}`);
+	// Implicit-flow session tokens arrive in the URL fragment, which is only
+	// visible to the browser. Render the callback page so it can store them.
+	return { next };
 };

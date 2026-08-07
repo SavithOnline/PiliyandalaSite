@@ -1,7 +1,10 @@
 import { fail, redirect } from '@sveltejs/kit';
+import { createClient } from '@supabase/supabase-js';
 import type { Actions, PageServerLoad } from './$types';
 import { base } from '$app/paths';
+import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
 import { safeNextPath } from '$lib/server/auth';
+import type { Database } from '$lib/database.types';
 
 const AUTH_NEXT_COOKIE = 'piliyandala-auth-next';
 const AUTH_CALLBACK_PATH = `${base}/auth/callback`;
@@ -48,7 +51,19 @@ export const actions: Actions = {
 			secure: url.protocol === 'https:'
 		});
 
-		const { error } = await locals.supabase.auth.signInWithOtp({
+		// Start an implicit magic-link flow so the link can finish in whichever
+		// browser opens the email. The callback stores the resulting session in
+		// SSR cookies before returning the user to the forum.
+		const emailAuthClient = createClient<Database>(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
+			auth: {
+				flowType: 'implicit',
+				autoRefreshToken: false,
+				detectSessionInUrl: false,
+				persistSession: false
+			}
+		});
+
+		const { error } = await emailAuthClient.auth.signInWithOtp({
 			email,
 			options: {
 				emailRedirectTo,
