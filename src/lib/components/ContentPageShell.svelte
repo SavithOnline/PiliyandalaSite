@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { base } from '$app/paths';
 	import type { ContentPage } from '$lib/content/types';
 	import Prose from './Prose.svelte';
 
@@ -25,16 +24,6 @@
 		<h1 class="page-title">{page.title}</h1>
 		<p class="page-lede">{page.lede}</p>
 	</header>
-
-	{#if page.image}
-		<figure class="feature-photo">
-			<img src={`${base}${page.image.src}`} alt={page.image.alt} loading="eager" />
-			<figcaption>
-				<span>{page.image.caption}</span>
-				<small>{page.image.credit}</small>
-			</figcaption>
-		</figure>
-	{/if}
 
 	{#each page.sections as section, i (i)}
 		<section class="section" id={section.id}>

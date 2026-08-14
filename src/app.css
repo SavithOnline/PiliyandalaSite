@@ -1035,6 +1035,143 @@ textarea.input {
 }
 
 /* ---------------------------------------------------------------------------
+   Community photo feed
+---------------------------------------------------------------------------- */
+
+.photo-feed {
+	padding-bottom: 2rem;
+}
+
+.photo-feed__head {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 2rem;
+	padding-block: 3.5rem 2.5rem;
+	border-bottom: 1px solid var(--line);
+}
+
+.photo-feed__head .eyebrow,
+.photo-upload .eyebrow {
+	display: block;
+	margin-bottom: 0.75rem;
+}
+
+.photo-feed__head .page-lede {
+	margin-top: 1rem;
+	max-width: 54ch;
+}
+
+.photo-upload {
+	display: grid;
+	grid-template-columns: minmax(0, 0.8fr) minmax(20rem, 1.2fr);
+	gap: clamp(2rem, 6vw, 5rem);
+	margin-block: 2rem 3rem;
+	padding: clamp(1.25rem, 4vw, 2rem);
+	border: 1px solid var(--line);
+	background: var(--paper-2);
+}
+
+.photo-upload h2,
+.photo-stream h2 {
+	font-size: 1.35rem;
+	line-height: 1.25;
+}
+
+.photo-upload p {
+	margin-top: 0.6rem;
+	font-size: 0.92rem;
+	color: var(--ink-soft);
+}
+
+.photo-upload .form-error {
+	margin: 0 0 1rem;
+}
+
+.file-input {
+	padding: 0.45rem;
+}
+
+.file-input::file-selector-button {
+	margin-right: 0.8rem;
+	padding: 0.45rem 0.7rem;
+	border: 1px solid var(--line-strong);
+	border-radius: var(--r);
+	background: var(--paper);
+	font: inherit;
+	font-weight: 650;
+	cursor: pointer;
+}
+
+textarea.photo-caption {
+	min-height: 6rem;
+}
+
+.photo-stream {
+	padding-top: 0.5rem;
+}
+
+.photo-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.25rem;
+}
+
+.photo-card {
+	min-width: 0;
+	border: 1px solid var(--line);
+	background: rgba(255, 255, 255, 0.35);
+}
+
+.photo-card img {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	background: var(--paper-2);
+}
+
+.photo-card__body {
+	padding: 0.9rem 1rem 1rem;
+}
+
+.photo-card__body p {
+	margin-bottom: 0.6rem;
+	line-height: 1.45;
+	overflow-wrap: anywhere;
+}
+
+.photo-card__meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.3rem;
+	font-size: 0.8rem;
+	color: var(--muted);
+}
+
+@media (max-width: 800px) {
+	.photo-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.photo-upload {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+}
+
+@media (max-width: 560px) {
+	.photo-feed__head {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.photo-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ---------------------------------------------------------------------------
    Forum
 ---------------------------------------------------------------------------- */
 

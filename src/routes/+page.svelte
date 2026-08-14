@@ -77,6 +77,7 @@
 		<div class="hero__actions">
 			<a class="btn btn--primary" href="{base}/geoportal">Open the Geo-Portal</a>
 			<a class="btn" href="{base}/about">Explore the town</a>
+			<a class="btn" href="{base}/photos">Community photos</a>
 			<a class="btn" href="{base}/forum">Join the forum</a>
 		</div>
 	</div>

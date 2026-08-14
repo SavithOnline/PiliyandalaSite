@@ -161,6 +161,38 @@ export type Database = {
           },
         ];
       };
+	  photo_posts: {
+		Row: {
+		  id: string;
+		  author_id: string;
+		  storage_path: string;
+		  caption: string;
+		  created_at: string;
+		};
+		Insert: {
+		  id?: string;
+		  author_id: string;
+		  storage_path: string;
+		  caption?: string;
+		  created_at?: string;
+		};
+		Update: {
+		  id?: string;
+		  author_id?: string;
+		  storage_path?: string;
+		  caption?: string;
+		  created_at?: string;
+		};
+		Relationships: [
+		  {
+			foreignKeyName: 'photo_posts_author_id_fkey';
+			columns: ['author_id'];
+			isOneToOne: false;
+			referencedRelation: 'profiles';
+			referencedColumns: ['id'];
+		  },
+		];
+	  };
     };
     Views: {
       [_ in never]: never;
