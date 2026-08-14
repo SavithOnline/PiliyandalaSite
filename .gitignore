@@ -1,18 +1,27 @@
-node_modules
+# Dependencies
+node_modules/
 
-# Output
-.output
-.vercel
-.netlify
-.wrangler
-/.svelte-kit
-/build
+# Build output
+/.svelte-kit/
+/build/
+/.output/
+/.vercel/
+/.netlify/
+/.wrangler/
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Env
+# Environment variables
 .env
 .env.*
 !.env.example
@@ -23,10 +32,12 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # Supabase
-supabase/.temp
+supabase/.temp/
 
-.vercel
-.env*
-
-#info
+# Local project data
 PiliyandalaData/
+
+# Editor-local files
+.idea/
+.vscode/*
+!.vscode/extensions.json
