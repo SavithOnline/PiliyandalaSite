@@ -27,3 +27,6 @@ supabase/.temp
 
 .vercel
 .env*
+
+#info
+PiliyandalaData/
