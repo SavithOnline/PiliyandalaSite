@@ -1,0 +1,18 @@
+{
+  "type": "FeatureCollection",
+  "name": "Piliyandala town centre",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Piliyandala town centre",
+        "description": "Clock Tower roundabout and central commercial area",
+        "postal_code": "10300"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [79.9228, 6.8011]
+      }
+    }
+  ]
+}
