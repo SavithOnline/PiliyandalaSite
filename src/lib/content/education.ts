@@ -5,6 +5,12 @@ export const education: ContentPage = {
 	title: 'Piliyandala Central College — “The Pride of Piliyandala”',
 	lede:
 		'Sinhala: පිලියන්දල මධ්ය මහා විද්යාලය — a National School (Type 1AB), the first National Sports School in Sri Lanka, and among the first Central Colleges founded under C.W.W. Kannangara.',
+	image: {
+		src: '/images/central-college.jpg',
+		alt: 'Entrance sign and C W W Kannangara statue at Piliyandala Central College',
+		caption: 'Piliyandala Central College is identified as Sri Lanka’s first National Sports School.',
+		credit: 'Photograph supplied by the site author.'
+	},
 	sections: [
 		{
 			heading: 'Piliyandala Central College (PCC)',

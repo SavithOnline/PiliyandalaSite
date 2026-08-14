@@ -5,6 +5,12 @@ export const landmarks: ContentPage = {
 	title: 'The Clock Tower, the Vesak thorana and Bolgoda Lake',
 	lede:
 		'Piliyandala’s identity is anchored by one structure — a 78-foot clock tower at the town’s heart — and coloured by its festivals, lake and cricket.',
+	image: {
+		src: '/images/vesak-thorana.jpg',
+		alt: 'The brightly illuminated Piliyandala Vesak thorana at night',
+		caption: 'The annual Vesak thorana brings light, storytelling and crowds to the town centre.',
+		credit: 'Photograph supplied by the site author.'
+	},
 	sections: [
 		{
 			heading: 'The Piliyandala Clock Tower',

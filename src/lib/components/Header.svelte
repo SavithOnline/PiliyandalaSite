@@ -14,6 +14,7 @@
 		{ href: `${base}/landmarks`, label: 'Landmarks' },
 		{ href: `${base}/geography`, label: 'Geography' },
 		{ href: `${base}/transport`, label: 'Transport' },
+		{ href: `${base}/geoportal`, label: 'Geo-Portal' },
 		{ href: `${base}/forum`, label: 'Forum' }
 	]);
 

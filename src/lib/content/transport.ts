@@ -5,6 +5,12 @@ export const transport: ContentPage = {
 	title: 'A transport hub on the southern approach to Colombo',
 	lede:
 		'The central bus stand near the Clock Tower is the town’s transport hub. Piliyandala has no railway station — but the buses, roads and expressway access more than make up for it.',
+	image: {
+		src: '/images/bus-station.jpg',
+		alt: 'Buses and passengers at Piliyandala central bus station',
+		caption: 'Piliyandala bus station connects the town with Colombo and surrounding suburbs.',
+		credit: 'Photograph supplied by the site author.'
+	},
 	sections: [
 		{
 			heading: 'Road network',

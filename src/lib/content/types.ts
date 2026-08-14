@@ -32,5 +32,11 @@ export interface ContentPage {
 	eyebrow: string;
 	title: string;
 	lede: string;
+	image?: {
+		src: string;
+		alt: string;
+		caption: string;
+		credit: string;
+	};
 	sections: ContentSection[];
 }

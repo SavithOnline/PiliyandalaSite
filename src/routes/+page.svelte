@@ -6,6 +6,12 @@
 
 	const teasers = [
 		{
+			href: '/geoportal',
+			index: '00',
+			title: 'Geo-Portal',
+			desc: 'Explore community services and landmarks on an interactive map, then download the spatial datasets.'
+		},
+		{
 			href: '/history',
 			index: '01',
 			title: 'History',
@@ -69,7 +75,8 @@
 			for the town.
 		</p>
 		<div class="hero__actions">
-			<a class="btn btn--primary" href="{base}/about">Explore the town</a>
+			<a class="btn btn--primary" href="{base}/geoportal">Open the Geo-Portal</a>
+			<a class="btn" href="{base}/about">Explore the town</a>
 			<a class="btn" href="{base}/forum">Join the forum</a>
 		</div>
 	</div>
@@ -115,6 +122,31 @@
 			</a>
 		{/each}
 	</div>
+</section>
+
+<section class="wrap home-gallery" aria-labelledby="town-pictures">
+	<div class="section__head">
+		<div>
+			<span class="eyebrow">Field photography</span>
+			<h2 id="town-pictures">Piliyandala in pictures</h2>
+		</div>
+		<a class="nav-cta" href="{base}/sources">Photo credits →</a>
+	</div>
+	<div class="photo-grid">
+		<figure class="photo-grid__wide">
+			<img src="{base}/images/main-market.jpg" alt="Busy produce stalls inside Piliyandala main market" loading="lazy" />
+			<figcaption>Piliyandala main market</figcaption>
+		</figure>
+		<figure>
+			<img src="{base}/images/bus-station.jpg" alt="Buses at Piliyandala central bus station" loading="lazy" />
+			<figcaption>Central bus station</figcaption>
+		</figure>
+		<figure>
+			<img src="{base}/images/vesak-thorana.jpg" alt="Illuminated Vesak thorana in Piliyandala" loading="lazy" />
+			<figcaption>Vesak thorana</figcaption>
+		</figure>
+	</div>
+	<p class="photo-credit">Photographs supplied by the site author.</p>
 </section>
 
 <section class="wrap" style="padding-bottom:4.5rem">

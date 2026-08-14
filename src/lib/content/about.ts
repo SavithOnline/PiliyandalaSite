@@ -5,6 +5,12 @@ export const about: ContentPage = {
 	title: 'Piliyandala at a glance',
 	lede:
 		'Piliyandala is a major suburban town in the Colombo District of the Western Province, Sri Lanka — roughly 18 km (11 miles) south of Colombo and part of the greater Colombo metropolitan area.',
+	image: {
+		src: '/images/main-market.jpg',
+		alt: 'Shoppers and produce stalls inside Piliyandala main market',
+		caption: 'Piliyandala main market remains one of the town centre’s busiest everyday spaces.',
+		credit: 'Photograph supplied by the site author.'
+	},
 	sections: [
 		{
 			heading: 'Piliyandala in numbers',

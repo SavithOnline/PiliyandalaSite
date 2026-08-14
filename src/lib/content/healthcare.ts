@@ -5,6 +5,12 @@ export const healthcare: ContentPage = {
 	title: 'A divisional hospital with roots in 1939',
 	lede:
 		'What began as a maternity home in 1939 is now the Divisional Hospital — Piliyandala, a Type-B hospital serving the town under Sri Lanka’s universal healthcare policy, free of charge.',
+	image: {
+		src: '/images/district-hospital.jpg',
+		alt: 'Entrance buildings of the Divisional Hospital Piliyandala',
+		caption: 'The Divisional Hospital provides public healthcare close to the town centre.',
+		credit: 'Photograph supplied by the site author.'
+	},
 	sections: [
 		{
 			heading: 'Divisional Hospital — Piliyandala',
