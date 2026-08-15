@@ -790,7 +790,7 @@ textarea.input {
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	left: calc(7.25rem + 0.875rem);
+	left: calc(7.25rem + 0.75rem + 0.875rem);
 	width: 1px;
 	background: var(--line-strong);
 }
@@ -866,7 +866,7 @@ textarea.input {
 	}
 
 	.timeline__item::before {
-		left: 0.5625rem;
+		left: 0.625rem;
 	}
 
 	.timeline__year {
