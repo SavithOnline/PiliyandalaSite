@@ -94,11 +94,11 @@ export const landmarks: ContentPage = {
 			blocks: [
 				{
 					type: 'p',
-					text: 'A famous <strong>electrically lit Vesak pandol (Thorana)</strong> is erected in front of Piliyandala Central College every Vesak festival. Each scene of a chosen <strong>Jataka tale</strong> is illuminated with coloured lights in electronically designed patterns, accompanied by traditional “viridu” verse singing or narration. It is organised by the <strong>Piliyandala Vaishakya Pujothsava Kamituwa</strong> (Vesak festival committee) and supported by local benefactors and religious organisations.'
+					text: 'A famous <strong>electrically lit Vesak Thorana</strong> is erected in front of Piliyandala Central College every Vesak festival. Each scene of a chosen <strong>Jataka tale</strong> is illuminated with coloured lights in electronically designed patterns, accompanied by traditional “viridu” verse singing or narration. It is organised by the <strong>Piliyandala Vaishakya Pujothsava Kamituwa</strong> (Vesak festival committee) and supported by local benefactors and religious organisations.'
 				},
 				{
 					type: 'note',
-					text: 'The pandol was not erected between 2019 and 2021 due to the COVID-19 pandemic and the 2019 Easter attacks; it returned in the Poson season of 2022.'
+					text: 'The Thorana was not erected between 2019 and 2021 due to the COVID-19 pandemic and the 2019 Easter attacks; it returned in the Poson season of 2022.'
 				}
 			]
 		},
