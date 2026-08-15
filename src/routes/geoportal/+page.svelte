@@ -5,17 +5,20 @@
 		{
 			name: 'Piliyandala town centre',
 			detail: 'Clock Tower roundabout and the central commercial area',
-			href: 'https://www.openstreetmap.org/?mlat=6.8011&mlon=79.9228#map=17/6.8011/79.9228'
+			lat: 6.8011,
+			lon: 79.9228
 		},
 		{
 			name: 'Central bus stand',
 			detail: 'The main interchange for local and Colombo-bound bus routes',
-			href: 'https://www.openstreetmap.org/search?query=Piliyandala%20bus%20stand'
+			lat: 6.80208,
+			lon: 79.92507
 		},
 		{
 			name: 'Piliyandala Central College',
 			detail: 'National school and local educational landmark',
-			href: 'https://www.openstreetmap.org/search?query=Piliyandala%20Central%20College'
+			lat: 6.79972,
+			lon: 79.92083
 		}
 	];
 </script>
@@ -55,7 +58,7 @@
 		></iframe>
 		<div class="map-shell__footer">
 			<span>Map data © OpenStreetMap contributors</span>
-			<a href="https://www.openstreetmap.org/?mlat=6.8011&mlon=79.9228#map=15/6.8011/79.9228" target="_blank" rel="noreferrer">View larger map ↗</a>
+			<a href="{base}/geoportal/map?name=Piliyandala%20town%20centre&amp;lat=6.8011&amp;lon=79.9228">View full-screen map →</a>
 		</div>
 	</div>
 
@@ -66,10 +69,10 @@
 		</div>
 		<div class="places__list">
 			{#each places as place}
-				<a href={place.href} target="_blank" rel="noreferrer">
+				<a href={`${base}/geoportal/map?name=${encodeURIComponent(place.name)}&lat=${place.lat}&lon=${place.lon}`}>
 					<strong>{place.name}</strong>
 					<span>{place.detail}</span>
-					<small>Open in map ↗</small>
+					<small>Open in map →</small>
 				</a>
 			{/each}
 		</div>
