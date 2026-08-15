@@ -26,7 +26,7 @@
 				<div class="stack">
 					<a href="{base}/geoportal">Geo-Portal</a>
 					<a href="{base}/forum">Forum</a>
-					<a href="{base}/sources">Sources & credits</a>
+					<a href="{base}/photos">Photos</a>
 					<a href="{base}/login">Log in</a>
 				</div>
 			</div>
