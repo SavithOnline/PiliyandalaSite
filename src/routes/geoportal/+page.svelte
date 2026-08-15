@@ -13,11 +13,6 @@
 			href: 'https://www.openstreetmap.org/search?query=Piliyandala%20bus%20stand'
 		},
 		{
-			name: 'Divisional Hospital',
-			detail: 'Government hospital and outpatient services',
-			href: 'https://www.openstreetmap.org/search?query=Divisional%20Hospital%20Piliyandala'
-		},
-		{
 			name: 'Piliyandala Central College',
 			detail: 'National school and local educational landmark',
 			href: 'https://www.openstreetmap.org/search?query=Piliyandala%20Central%20College'

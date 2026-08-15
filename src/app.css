@@ -776,7 +776,7 @@ textarea.input {
 	list-style: none;
 }
 
-.timeline__item {
+.section .timeline__item {
 	position: relative;
 	display: grid;
 	grid-template-columns: 7.25rem 1.75rem minmax(0, 1fr);
@@ -859,7 +859,7 @@ textarea.input {
 }
 
 @media (max-width: 640px) {
-	.timeline__item {
+	.section .timeline__item {
 		grid-template-columns: 1.25rem minmax(0, 1fr);
 		gap: 0 0.75rem;
 		padding-bottom: 1.25rem;
