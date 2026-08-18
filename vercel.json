@@ -1,0 +1,26 @@
+{
+	"redirects": [
+		{
+			"source": "/",
+			"has": [
+				{
+					"type": "host",
+					"value": "piliyandala.savith.online"
+				}
+			],
+			"destination": "https://savith.online/Piliyandala",
+			"permanent": true
+		},
+		{
+			"source": "/(.*)",
+			"has": [
+				{
+					"type": "host",
+					"value": "piliyandala.savith.online"
+				}
+			],
+			"destination": "https://savith.online/Piliyandala/$1",
+			"permanent": true
+		}
+	]
+}
